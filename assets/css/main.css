@@ -795,6 +795,10 @@ body::after {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+    .hero header h1 strong {
+        display: block;
+        margin-top: 0.2em;
+    }
     #top .about_me,
     #top .experience {
         padding: 0.8em;
@@ -3109,6 +3113,11 @@ body::after {
 		#top .row > * {
 			padding-left: 0 !important;
 			padding-right: 0 !important;
+		}
+
+		.hero header h1 strong {
+			display: block;
+			margin-top: 0.2em;
 		}
 
 		/* Basic */
