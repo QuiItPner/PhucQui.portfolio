@@ -410,6 +410,14 @@ body::after {
 	animation-delay: 12s;
 }
 
+/* Reduce background shapes on mobile */
+@media screen and (max-width: 736px) {
+	.shape { opacity: 0.15; filter: blur(3px); }
+	.shape-1 { width: 160px; height: 160px; top: 2%; left: -5%; }
+	.shape-3 { width: 120px; height: 120px; top: 65%; left: 65%; }
+	.shape-2, .shape-4, .shape-5 { display: none; }
+}
+
 .grid-overlay {
 	position: fixed;
 	top: 0;
