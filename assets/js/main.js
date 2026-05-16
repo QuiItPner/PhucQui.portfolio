@@ -58,7 +58,7 @@
 	updateNav();
 
 	// --- TYPEWRITER EFFECT ---
-	var nameEl = document.querySelector('.hero header h1:last-child strong');
+	var nameEl = document.querySelector('.hero header h1 strong');
 	if (nameEl && window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 		var fullText   = nameEl.textContent.trim();
 		var cursor     = document.createElement('span');
