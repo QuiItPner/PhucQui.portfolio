@@ -412,9 +412,9 @@ body::after {
 
 /* Reduce background shapes on mobile */
 @media screen and (max-width: 736px) {
-	.shape { opacity: 0.15; filter: blur(3px); }
-	.shape-1 { width: 160px; height: 160px; top: 2%; left: -5%; }
-	.shape-3 { width: 120px; height: 120px; top: 65%; left: 65%; }
+	.shape { opacity: 0.12; filter: blur(3px); }
+	.shape-1 { width: 150px; height: 150px; top: 8%; left: 10%; }
+	.shape-3 { width: 130px; height: 130px; top: 60%; left: auto; right: 8%; }
 	.shape-2, .shape-4, .shape-5 { display: none; }
 }
 
