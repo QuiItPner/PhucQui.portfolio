@@ -3591,6 +3591,16 @@ body>article {
 	100% { transform: scale(1) rotate(0deg); }
 }
 
+/* 6b. Verify text color change on card hover */
+.verify-text {
+	transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.card_main:hover .verify-text {
+	color: #00e8a0;
+	text-shadow: 0 0 10px rgba(0, 232, 160, 0.4);
+}
+
 /* 7. Avatar: gentle float */
 .hero .image img {
 	animation: avatar-float 5s ease-in-out infinite;
