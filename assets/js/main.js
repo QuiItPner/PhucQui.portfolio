@@ -3,23 +3,23 @@
 	Enhanced with professional animations
 */
 
-(function($) {
+(function ($) {
 
-	var $window   = $(window),
-	    $body     = $('body'),
-	    $nav      = $('#nav');
+	var $window = $(window),
+		$body = $('body'),
+		$nav = $('#nav');
 
 	// Breakpoints
 	breakpoints({
-		xlarge: [ '1281px', '1680px' ],
-		large:  [ '981px',  '1280px' ],
-		medium: [ '737px',  '980px'  ],
-		small:  [ null,     '736px'  ]
+		xlarge: ['1281px', '1680px'],
+		large: ['981px', '1280px'],
+		medium: ['737px', '980px'],
+		small: [null, '736px']
 	});
 
 	// Remove preload class after load
-	$window.on('load', function() {
-		window.setTimeout(function() {
+	$window.on('load', function () {
+		window.setTimeout(function () {
 			$body.removeClass('is-preload');
 		}, 100);
 	});
@@ -27,16 +27,16 @@
 	// Smooth scroll
 	$('#nav a, .scrolly').scrolly({
 		speed: 1000,
-		offset: function() { return $nav.height(); }
+		offset: function () { return $nav.height(); }
 	});
 
 	// --- SCROLL PROGRESS BAR ---
 	var $progressBar = $('<div id="scroll-progress"></div>').prependTo('body');
 
 	function updateProgress() {
-		var scrollTop  = $(window).scrollTop();
-		var docHeight  = $(document).height() - $(window).height();
-		var progress   = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+		var scrollTop = $(window).scrollTop();
+		var docHeight = $(document).height() - $(window).height();
+		var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 		$progressBar.css('width', progress + '%');
 	}
 
@@ -49,7 +49,7 @@
 		}
 	}
 
-	$window.on('scroll', function() {
+	$window.on('scroll', function () {
 		updateProgress();
 		updateNav();
 	});
@@ -58,10 +58,10 @@
 	updateNav();
 
 	// --- TYPEWRITER EFFECT ---
-	var nameEl = document.querySelector('.hero header h1 strong');
+	var nameEl = document.querySelector('.hero header h1:last-child strong');
 	if (nameEl && window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-		var fullText   = nameEl.textContent.trim();
-		var cursor     = document.createElement('span');
+		var fullText = nameEl.textContent.trim();
+		var cursor = document.createElement('span');
 		cursor.className = 'typewriter-cursor';
 		nameEl.textContent = '';
 		nameEl.appendChild(cursor);
@@ -109,8 +109,8 @@
 
 	if (animatedElements.length) {
 		if ('IntersectionObserver' in window && !prefersReducedMotion.matches) {
-			var observer = new IntersectionObserver(function(entries) {
-				entries.forEach(function(entry) {
+			var observer = new IntersectionObserver(function (entries) {
+				entries.forEach(function (entry) {
 					if (entry.isIntersecting) {
 						entry.target.classList.add('is-visible');
 					} else {
@@ -122,11 +122,11 @@
 				rootMargin: '0px 0px -5% 0px'
 			});
 
-			animatedElements.forEach(function(el) {
+			animatedElements.forEach(function (el) {
 				observer.observe(el);
 			});
 		} else {
-			animatedElements.forEach(function(el) {
+			animatedElements.forEach(function (el) {
 				el.classList.add('is-visible');
 			});
 		}
